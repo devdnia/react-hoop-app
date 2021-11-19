@@ -1,6 +1,7 @@
 import React, { useEffect, useReducer } from 'react';
 import { todoReducer } from './todoReducer';
 import { useForm } from '../../hooks/useForm';
+import { TodoList } from './components/TodoList';
 
 import './styles.css';
 
@@ -75,34 +76,12 @@ export const TodoApp = () => {
 
                 <div className='row'>
                     <div className='col-7'>
-                        {/*TodoList, todos, handleDelete, handleToogle*/}
-                        <ul className='list-group list-group-flush'>
-                            {
-                                todos.map( ( todo, i ) =>(
-                                    // TodoLIstItem, todo, index, handleDelete, handleToogle
-                                    <li
-                                         key={ todo.id }
-                                         className='list-group-item'
-                                    > 
-                                         <p 
-                                            className={ `${ todo.done && 'complete'}`}
-                                            onClick={ () => handleToogle( todo.id ) }
-                                         >
-                                            { i + 1}. { todo.desc}
-                                         </p>
-                                         <button
-                                             className='btn btn-danger'
-                                             onClick={ () => handleDelete(todo.id) }
-                                         >
-                                         
-                                             Borrar
-                                         </button>
-                                    </li>
-                                ))
-                                
-                            }
-                        </ul>
-                </div>
+                        <TodoList 
+                            todos={ todos }
+                            handleDelete={ handleDelete }
+                            handleToogle={ handleToogle }
+                        />
+                    </div>
 
                     <div className='col-5'>
                         <h4>
