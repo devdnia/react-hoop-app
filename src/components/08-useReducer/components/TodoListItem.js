@@ -25,6 +25,7 @@ export const TodoListItem = ( {todo, index, handleDelete, handleToogle} ) => {
     )
 }
 
+
 TodoListItem.propTypes = {
     todo: PropTypes.object.isRequired,
     index: PropTypes.number.isRequired,

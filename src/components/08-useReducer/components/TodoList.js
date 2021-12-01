@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-
 import { TodoListItem } from './TodoListItem'
 
 export const TodoList = ( {todos, handleDelete, handleToogle}) => {
